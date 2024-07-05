@@ -1,0 +1,56 @@
+<div *ngIf="erroMessage" class="alert alert-danger" role="alert">
+  A simple danger alert—check it out!
+</div>
+<div>
+  <div class="row">
+    <div class="card cardwidth grey-color">
+      <div class="card-body mb-2">
+        <h4>Filters</h4>
+        <div class="row">
+          <div class="col-sm-5">
+            <div class="input-group">
+              <span class="input-group-text" id="title">Title</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" [(ngModel)]="movieTitle"
+                aria-describedby="title" />
+            </div>
+          </div>
+
+          <div class="col-sm-7">
+            <div class="input-group">
+              <span class="input-group-text" id="releaseYearId">Release Year</span>
+              <input type="text" class="form-control" aria-label="Sizing example input" [(ngModel)]="releaseYear"
+                aria-describedby="releaseYearId" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="card cardwidth">
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let movie of moviesList | search : movieTitle : releaseYear">
+            <div class="list-group removeborder">
+              <span href="#" class="list-group-item list-group-item-action removeborder" aria-current="true">
+                <div class="d-flex w-100 justify-content-between">
+                  <h5 class="mb-1">{{ movie.title }}</h5>
+                  <button class="btn btn-light grey-color">
+                    <span [routerLink]="[movie.id]">Details</span>
+                  </button>
+                </div>
+                <p class="mb-1">
+                  <span class="spanMargin5">Release Date: {{ movie.release_date }}
+                  </span>
+                  <span class="spanMargin5">
+                    Budget: {{ movie.budget | dollarConverter }}</span>
+                  <span class="spanMargin5">
+                    Duration: {{ movie.duration | minutesToHour }}</span>
+                </p>
+              </span>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>

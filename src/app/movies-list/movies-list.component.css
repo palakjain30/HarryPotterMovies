@@ -1,0 +1,22 @@
+.removeLiDot{
+    list-style-type: none
+}
+
+.spanMargin5{
+    margin:5px;
+    font-size: small;
+}
+
+input{margin: 0;}
+
+.removeborder{
+    border: none;
+}
+
+.grey-color{
+    background-color: lightgray;
+}
+
+.cardwidth{
+    max-width: 80%;
+}

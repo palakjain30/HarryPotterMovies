@@ -1,0 +1,11 @@
+.centerAlign{
+    text-align: center;
+}
+
+.cursorpointer{
+    cursor: pointer;
+}
+
+.cardwidth{
+    max-width: 80%;
+}
